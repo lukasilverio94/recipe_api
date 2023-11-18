@@ -62,23 +62,16 @@ $("#meal-container").on("click", ".recipe-btn", async (e) => {
 
 // Function Modal
 function mealRecipeModal(meal) {
-  // Check if the meal array is not empty and has the expected structure
-  if (
-    meal &&
-    meal.length > 0 &&
-    meal[0].strInstructions &&
-    meal[0].strMealThumb &&
-    meal[0].strYoutube
-  ) {
-    let html = `
+  let html = `
       <div class="modal fade bg-danger" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+        <div class="modal-dialog ">
+          <div class="modal-content  ">
             <div class="modal-header">
               <h5 class="modal-title text-center fw-semibold">Instructions</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body overflow-y-auto">
+              <h3 class="fw-semibold">${meal[0].strMeal}</h3>
               <p>${meal[0].strInstructions}</p>            
               <img src="${meal[0].strMealThumb}" class="img-fluid" alt="food">   
               <div class="recipe-link mt-3">
@@ -93,12 +86,8 @@ function mealRecipeModal(meal) {
       </div>
     `;
 
-    $(".meal-details-content").html(html);
-    // Trigger the modal manually
-    var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
-    myModal.show();
-  } else {
-    console.error("Invalid meal data:", meal);
-
-  }
+  $(".meal-details-content").html(html);
+  // Trigger the modal manually
+  var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+  myModal.show();
 }
