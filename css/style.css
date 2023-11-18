@@ -3,6 +3,10 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 .meal-details-content img {
   width: 100%;
   max-width: 150px;

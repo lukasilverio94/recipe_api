@@ -12,7 +12,7 @@ $("#search-btn").click(async () => {
     if (response.meals) {
       response.meals.forEach((meal) => {
         output += `
-        <div class="card shadow meal-item" style="width: 18rem;" data-id="${meal.idMeal}">             
+        <div class="card shadow meal-item mb-5" style="width: 18rem;" data-id="${meal.idMeal}">             
         <img src="${meal.strMealThumb}" class="card-img-top" alt="food">              
         <div class="card-body">
           <h3 class="card-title py-2">${meal.strMeal}</h3>
@@ -34,15 +34,11 @@ $("#search-btn").click(async () => {
 
 //get meal recipe
 // Add event listener after rendering the meals
-//get meal recipe
-// Add event listener after rendering the meals
 $("#meal-container").on("click", ".recipe-btn", async (e) => {
   e.preventDefault();
   try {
-    let mealItem = $(e.target).closest(".meal-item");
+    let mealItem = $(e.target).closest(".meal-item"); //Get the parentElement
     let mealId = mealItem.data("id");
-
-    console.log("Meal ID:", mealId);
 
     const response = await $.ajax({
       url: `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`,
@@ -62,7 +58,7 @@ $("#meal-container").on("click", ".recipe-btn", async (e) => {
 
 // Function Modal
 function mealRecipeModal(meal) {
-  let html = `
+  let output = `
       <div class="modal fade bg-danger" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog ">
           <div class="modal-content  ">
@@ -86,8 +82,13 @@ function mealRecipeModal(meal) {
       </div>
     `;
 
-  $(".meal-details-content").html(html);
+  $(".meal-details-content").html(output);
   // Trigger the modal manually
-  var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
+  let myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
   myModal.show();
 }
+
+//Clear containers
+$("#clear-btn").click(() => {
+  $("#meal-result").hide();
+});
