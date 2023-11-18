@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MovieInfo</title>
+    <!-- Bootswatch -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Local css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Bootstrap icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="meal-search">
+        <h2 class="display-6 py-3">Find Meals For Your Ingredients</h2>
+        <h5 class="mb-4">
+          Doesn't know what to cook today? Just type any ingredient that you
+          have in your fridge!
+        </h5>
+
+        <div class="meal-search-box">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter an ingredient"
+            id="search-input"
+          />
+          <!-- search button -->
+          <button type="submit" class="btn btn-primary my-2" id="search-btn">
+            <i class="bi bi-search"></i> Search
+          </button>
+          <!-- Clear search  -->
+          <button type="submit" class="btn btn-danger my-2" id="clear-btn">
+            <i class="bi bi-trash"></i>Clear
+          </button>
+        </div>
+      </div>
+
+      <div class="meal-result">
+        <h2 class="text-center mb-3">Your Search Results:</h2>
+        <!-- Container results  -->
+        <div
+          id="meal-container"
+          class="container d-flex flex-wrap gap-4 justify-content-center"
+        >
+          <!-- meal item -->
+          <!-- <div class="card shadow" style="width: 18rem;">              
+                <img src="${meal.strMealThumb}" class="card-img-top" alt="food">              
+                <div class="card-body">
+                <h3 class="card-title py-2">${meal.strMeal}</h3>
+                <a href="#" class="btn btn-danger">Get Recipe</a>
+              </div>
+            </div> -->
+          <!-- end of meal item -->
+        </div>
+      </div>
+
+      <div class="meal-details">
+        <!-- recipe close btn -->
+        <button
+          type="button"
+          class="btn recipe-close-btn"
+          id="recipe-close-btn"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Meal content how to prepare.. -->
+        <div class="meal-details-content overflow-y-auto">
+          <!-- Modal Goes Here -->
+          <!-- Modal Goes Here -->
+          <!-- Modal Goes Here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- js bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- local script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
