@@ -21,6 +21,7 @@ $("#search-btn").click(async () => {
       </div>`;
       });
       $("#meal-container").html(output);
+      $("#search-input").val("");
     } else {
       // Handle the case where no meals are found
       output = "Sorry, we didn't find any meal.";
@@ -89,6 +90,6 @@ function mealRecipeModal(meal) {
 }
 
 //Clear containers
-$("#clear-btn").click(() => {
-  $("#meal-result").hide();
+$("#clear-btn").click(function () {
+  $(".card").hide();
 });
