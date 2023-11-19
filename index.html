@@ -14,64 +14,64 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="meal-search">
-        <h2 class="display-6 py-3">Find Meals For Your Ingredients</h2>
-        <h5 class="mb-4">
-          Doesn't know what to cook today? Just type any ingredient that you
-          have in your fridge!
-        </h5>
+    <div class="container-fluid px-5">
+      <h2 class="display-6 py-4 mb-5 bg-dark text-light fw-semibold text-center">
+        Find Meals For Your Ingredients
+      </h2>
+      <h5 class="mb-4 fs-2">
+        Doesn't know what to cook today? Just type any ingredient that you have
+        in your fridge!
+      </h5>
 
-        <div class="meal-search-box">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Enter an ingredient"
-            id="search-input"
-          />
-          <!-- search button -->
-          <button
-            type="submit"
-            class="btn btn-primary my-2 fw-semibold py-2 w-100"
-            id="search-btn"
-          >
-            <i class="bi bi-search me-2"></i> Search
-          </button>
+      <div class="meal-search-box">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter an ingredient"
+          id="search-input"
+        />
+        <!-- search button -->
+        <button
+          type="submit"
+          class="btn btn-primary btn-large my-2 fw-semibold py-2 w-100"
+          id="search-btn"
+        >
+          <i class="bi bi-search me-2"></i> Search
+        </button>
 
-          <!-- Clear search  -->
+        <!-- Clear search  -->
 
-          <button
-            type="submit"
-            class="btn btn-danger fw-semibold py-2 w-100"
-            id="clear-btn"
-          >
-            <i class="bi bi-trash me-2"></i>Clear
-          </button>
-        </div>
+        <button
+          type="submit"
+          class="btn btn-danger fw-semibold py-2 w-100"
+          id="clear-btn"
+        >
+          <i class="bi bi-trash me-2"></i>Clear
+        </button>
       </div>
+    </div>
 
-      <div class="meal-result">
-        <h2 class="text-center my-4">Your Search Results:</h2>
-        <!-- Container results  -->
-        <div id="meal-container">
-          <!-- meal item -->
-          <!-- <div class="card shadow" style="width: 18rem;">              
+    <div class="container-fluid meal-result row">
+      <h2 class="text-center my-4">Your Search Results:</h2>
+      <!-- Container results  -->
+      <div id="meal-container">
+        <!-- meal item -->
+        <!-- <div class="card shadow" style="width: 18rem;">              
                 <img src="${meal.strMealThumb}" class="card-img-top" alt="food">              
                 <div class="card-body">
                 <h3 class="card-title py-2">${meal.strMeal}</h3>
                 <a href="#" class="btn btn-danger">Get Recipe</a>
               </div>
             </div> -->
-          <!-- end of meal item -->
-        </div>
+        <!-- end of meal item -->
       </div>
+    </div>
 
-      <!-- Meal content how to prepare.. -->
-      <div id="modal-container" class="meal-details-content">
-        <!-- Modal Goes Here -->
-        <!-- Modal Goes Here -->
-        <!-- Modal Goes Here -->
-      </div>
+    <!-- Meal content how to prepare.. -->
+    <div id="modal-container" class="meal-details-content">
+      <!-- Modal Goes Here -->
+      <!-- Modal Goes Here -->
+      <!-- Modal Goes Here -->
     </div>
 
     <!-- jQuery cdn -->

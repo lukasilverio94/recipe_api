@@ -11,7 +11,7 @@ $("#search-btn").click(async () => {
     if (response.meals) {
       response.meals.forEach((meal) => {
         output += `
-        <div class="card shadow meal-item mb-5 mx-2" data-id="${meal.idMeal}">             
+        <div class="card flex-1 shadow meal-item mb-5 mx-2" data-id="${meal.idMeal}">             
             <img src="${meal.strMealThumb}" class="card-img-top img-fluid" alt="food">              
             <div class="card-body">
               <h3 class="card-title py-2">${meal.strMeal}</h3>
