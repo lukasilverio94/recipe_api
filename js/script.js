@@ -8,7 +8,7 @@ $("#search-btn").click(async () => {
     // console.log(response);
 
     let output = "";
-    if (response.meals) {
+    if (response.meals && !$("#search-input").val("")) {
       response.meals.forEach((meal) => {
         output += `
         <div class="card flex-1 shadow meal-item mb-5 mx-2" data-id="${meal.idMeal}">             
@@ -24,8 +24,8 @@ $("#search-btn").click(async () => {
       $("#search-input").val("");
     } else {
       // Handle the case where no meals are found
-      output = "Sorry, we didn't find any meal.";
-      $("#meal-container").addClass("text-danger fs-3 fw-bold").html(output);
+      output = `Sorry, we didn't find any meal. Try again!`;
+      $("#meal-container").addClass("text-danger m-auto d-flex justify-content-center w-100 fs-4 fw-semibold").html(output);
     }
   } catch (error) {
     // Handle errors here
