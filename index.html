@@ -30,23 +30,30 @@
             id="search-input"
           />
           <!-- search button -->
-          <button type="submit" class="btn btn-primary my-2 fw-semibold py-2" id="search-btn">
+          <button
+            type="submit"
+            class="btn btn-primary my-2 fw-semibold py-2 w-100"
+            id="search-btn"
+          >
             <i class="bi bi-search me-2"></i> Search
           </button>
+
           <!-- Clear search  -->
-          <button type="submit" class="btn btn-danger my-2 fw-semibold py-2" id="clear-btn">
+
+          <button
+            type="submit"
+            class="btn btn-danger fw-semibold py-2 w-100"
+            id="clear-btn"
+          >
             <i class="bi bi-trash me-2"></i>Clear
           </button>
         </div>
       </div>
 
-      <div class="meal-result ">
-        <h2 class="text-center mb-3">Your Search Results:</h2>
+      <div class="meal-result">
+        <h2 class="text-center my-4">Your Search Results:</h2>
         <!-- Container results  -->
-        <div
-          id="meal-container"
-          class="container d-flex flex-wrap gap-4 justify-content-center"
-        >
+        <div id="meal-container">
           <!-- meal item -->
           <!-- <div class="card shadow" style="width: 18rem;">              
                 <img src="${meal.strMealThumb}" class="card-img-top" alt="food">              

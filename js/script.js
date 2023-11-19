@@ -5,20 +5,20 @@ $("#search-btn").click(async () => {
       url: `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`,
       dataType: "json", // Set the data type to JSON
     });
-
     // console.log(response);
 
     let output = "";
     if (response.meals) {
       response.meals.forEach((meal) => {
         output += `
-        <div class="card shadow meal-item mb-5" style="width: 18rem;" data-id="${meal.idMeal}">             
-        <img src="${meal.strMealThumb}" class="card-img-top" alt="food">              
-        <div class="card-body">
-          <h3 class="card-title py-2">${meal.strMeal}</h3>
-          <a href="#" class="btn btn-danger recipe-btn">Get Recipe</a>
-        </div>
-      </div>`;
+        <div class="card shadow meal-item mb-5 mx-2" data-id="${meal.idMeal}">             
+            <img src="${meal.strMealThumb}" class="card-img-top img-fluid" alt="food">              
+            <div class="card-body">
+              <h3 class="card-title py-2">${meal.strMeal}</h3>
+              <a href="#" class="btn btn-danger recipe-btn">Get Recipe</a>
+            </div>
+        </div>`;
+        
       });
       $("#meal-container").html(output);
       $("#search-input").val("");
@@ -60,8 +60,8 @@ $("#meal-container").on("click", ".recipe-btn", async (e) => {
 // Function Modal
 function mealRecipeModal(meal) {
   let output = `
-      <div class="modal fade bg-danger" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog ">
+      <div class="modal fade bg-primary " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-sm-down">
           <div class="modal-content  ">
             <div class="modal-header">
               <h5 class="modal-title text-center fw-semibold">Instructions</h5>

@@ -7,11 +7,51 @@
 html {
   scroll-behavior: smooth;
 }
+
+#meal-container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  gap: .5rem;
+  padding: 1rem 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
 .meal-details-content img {
   width: 100%;
-  max-width: 150px;
+  max-width: 250px;
   max-height: 300px;
   border-radius: 50%;
   margin: 0 auto;
   object-fit: cover;
+}
+
+.card {
+  width: 100%;
+  max-width: 18rem;
+}
+
+@media screen and (max-width: 992px) {
+  #meal-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    flex-grow: 1;
+  }
+  .modal {
+    width: 100% !important;
+    min-width: 400px !important;
+    font-size: 2rem !important;
+  }
+
+  .modal h3 {
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (max-width: 550px){
+  #meal-container {
+   display: flex;
+  }
 }
