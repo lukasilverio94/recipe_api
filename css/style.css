@@ -33,15 +33,16 @@ html {
   /* max-width: 18rem; */
 }
 
-
 @media screen and (max-width: 768px) {
   #meal-container {
     grid-template-columns: 1fr !important;
-    font-size: 2rem;
+    font-size: 2rem !important;
+  }
+
+  button {
+    font-size: 2rem !important;
   }
 }
-
-
 
 @media screen and (max-width: 992px) {
   #meal-container {
