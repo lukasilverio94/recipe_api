@@ -1,6 +1,11 @@
 $("#search-btn").click(async () => {
   try {
     const searchInputText = $("#search-input").val().trim();
+
+    if (!searchInputText) {
+      $("meal-container")
+      return;
+    }
     const response = await $.ajax({
       url: `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`,
       dataType: "json", // Set the data type to JSON
@@ -8,7 +13,7 @@ $("#search-btn").click(async () => {
     // console.log(response);
 
     let output = "";
-    if (response.meals && !$("#search-input").val("")) {
+    if (response.meals) {
       response.meals.forEach((meal) => {
         output += `
         <div class="card flex-1 shadow meal-item mb-5 mx-2" data-id="${meal.idMeal}">             
@@ -18,14 +23,17 @@ $("#search-btn").click(async () => {
               <a href="#" class="btn btn-danger recipe-btn">Get Recipe</a>
             </div>
         </div>`;
-        
       });
       $("#meal-container").html(output);
       $("#search-input").val("");
     } else {
       // Handle the case where no meals are found
       output = `Sorry, we didn't find any meal. Try again!`;
-      $("#meal-container").addClass("text-danger m-auto d-flex justify-content-center w-100 fs-4 fw-semibold").html(output);
+      $("#meal-container")
+        .addClass(
+          "text-danger m-auto d-flex justify-content-center w-100 fs-4 fw-semibold"
+        )
+        .html(output);
     }
   } catch (error) {
     // Handle errors here
