@@ -2,10 +2,10 @@ $("#search-btn").click(async () => {
   try {
     const searchInputText = $("#search-input").val().trim();
 
-    if (!searchInputText) {
-      $("meal-container")
+    if (!searchInputText) {      
       return;
     }
+    
     const response = await $.ajax({
       url: `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`,
       dataType: "json", // Set the data type to JSON

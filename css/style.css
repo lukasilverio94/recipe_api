@@ -30,7 +30,7 @@ html {
 
 .card {
   width: 100%;
-  /* max-width: 18rem; */
+  max-width: 18rem;
 }
 
 @media screen and (max-width: 768px) {
